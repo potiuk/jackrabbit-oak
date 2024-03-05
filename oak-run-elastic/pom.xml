@@ -46,7 +46,6 @@
         130 MB: Embed Aws Sdk 2.x in oak-blob-cloud (OAK-12008)
         -->
         <max.jar.size>140000000</max.jar.size>
-                      
     </properties>
 
     <build>
