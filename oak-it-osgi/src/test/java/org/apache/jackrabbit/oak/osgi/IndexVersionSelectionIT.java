@@ -290,14 +290,11 @@ public class IndexVersionSelectionIT {
                 mavenBundle("org.apache.felix", "org.apache.felix.configadmin", "1.9.20"),
                 mavenBundle("org.apache.felix", "org.apache.felix.fileinstall", "3.2.6"),
                 mavenBundle("org.ops4j.pax.logging", "pax-logging-api", "1.7.2"),
-                // Jackson dependency for object serialisation.
-                // (these only need to be defined here when the versions are different from the ones
-                // defined in the project -- otherwise -> "bundle symbolic name and version are not unique")
-                mavenBundle().groupId("com.fasterxml.jackson.core").artifactId("jackson-core").version("2.19.1"),
-                mavenBundle().groupId("com.fasterxml.jackson.core").artifactId("jackson-annotations").version("2.19.1"),
-                mavenBundle().groupId("com.fasterxml.jackson.core").artifactId("jackson-databind").version("2.19.1"),
                 mavenBundle().groupId("com.github.ben-manes.caffeine").artifactId("caffeine").version("3.1.8"),
+                mavenBundle("jakarta.servlet", "jakarta.servlet-api", "5.0.0"),
 
+                // required for slf4j 2.0.x
+                OSGiIT.spyflyOptions(),
                 frameworkProperty("repository.home").value("target"),
 
                 systemProperties(new SystemPropertyOption("felix.fileinstall.dir").value(getConfigDir())),
